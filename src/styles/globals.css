@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #1a1a1a;
+    --color-accent: #c8a96e;
+    --color-cream: #f8f5f0;
+    --color-muted: #6b6b6b;
+    --nav-height: 80px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #f8f5f0;
+    color: #1a1a1a;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #c8a96e;
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f0ebe2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c8a96e;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+
+  .section-pad {
+    @apply py-20 md:py-28 lg:py-36;
+  }
+
+  .label-tag {
+    @apply inline-flex items-center gap-2 text-xs font-semibold tracking-[0.15em] uppercase text-accent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-3 bg-primary text-cream px-7 py-4 text-sm font-semibold tracking-wide 
+    rounded-full transition-all duration-300 hover:bg-accent hover:text-primary 
+    hover:shadow-[0_8px_30px_rgba(200,169,110,0.4)] hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-3 border border-primary text-primary px-7 py-4 text-sm font-semibold tracking-wide 
+    rounded-full transition-all duration-300 hover:bg-primary hover:text-cream hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-primary
+    transition-all duration-300 hover:gap-4 hover:text-accent;
+  }
+
+  .text-hero {
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .text-section {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.1)];
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, #c8a96e 0%, #d4b97e 50%, #b8932a 100%);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #c8a96e 0%, #d4b97e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  .line-reveal {
+    overflow: hidden;
+  }
+
+  .line-reveal-inner {
+    display: block;
+    transform: translateY(100%);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .line-reveal.in-view .line-reveal-inner {
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-gpu {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+/* Swiper overrides */
+.swiper-pagination-bullet {
+  background: #c8a96e !important;
+  opacity: 0.4 !important;
+  width: 6px !important;
+  height: 6px !important;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  width: 24px !important;
+  border-radius: 3px !important;
+}
+
+/* AOS overrides */
+[data-aos] {
+  pointer-events: none;
+}
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+/* Lenis */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
