@@ -1,21 +1,21 @@
-# BrandsFace Clone — Frontend Recreation
+# PatchNova Clone — Frontend Recreation
 
-A pixel-perfect recreation of [brandsface.com](https://www.brandsface.com/) built as a learning project.
+A pixel-perfect recreation of [PatchNova.com](https://www.PatchNova.com/) built as a learning project.
 
 ## Tech Stack
 
-| Tool | Purpose |
-|------|---------|
-| React 18 + Vite | Core framework |
-| Tailwind CSS 3 | Utility-first styling |
-| Framer Motion | Page/component animations |
-| GSAP + ScrollTrigger | Scroll-driven animations, process timeline |
-| Lenis | Smooth scroll |
-| React Icons | Icon library |
-| Swiper.js | Mobile carousels (categories, testimonials) |
-| React CountUp | Animated number statistics |
-| Split-Type | Character-level text animations |
-| AOS | Scroll reveal fallback |
+| Tool                 | Purpose                                     |
+| -------------------- | ------------------------------------------- |
+| React 18 + Vite      | Core framework                              |
+| Tailwind CSS 3       | Utility-first styling                       |
+| Framer Motion        | Page/component animations                   |
+| GSAP + ScrollTrigger | Scroll-driven animations, process timeline  |
+| Lenis                | Smooth scroll                               |
+| React Icons          | Icon library                                |
+| Swiper.js            | Mobile carousels (categories, testimonials) |
+| React CountUp        | Animated number statistics                  |
+| Split-Type           | Character-level text animations             |
+| AOS                  | Scroll reveal fallback                      |
 
 ## Project Structure
 
@@ -57,6 +57,7 @@ npm run build
 ## Features Recreated
 
 ### Layout
+
 - ✅ Sticky transparent → frosted glass navbar on scroll
 - ✅ Full-screen hero with left text + right packaging illustration
 - ✅ Responsive grid: 1 col mobile → 2 col tablet → 3-4 col desktop
@@ -64,6 +65,7 @@ npm run build
 - ✅ Section padding system (`py-20 md:py-28 lg:py-36`)
 
 ### Design System
+
 - ✅ Color palette: `#1a1a1a` primary, `#c8a96e` gold accent, `#f8f5f0` cream
 - ✅ Typography: Playfair Display (display) + Inter (body)
 - ✅ Fluid type scale with `clamp()` for hero and section headings
@@ -73,6 +75,7 @@ npm run build
 - ✅ Border radius system: sm=8px, md=16px, xl=24px, 2xl=32px
 
 ### Animations
+
 - ✅ **Hero**: staggered fade-up on mount (Framer Motion)
 - ✅ **Hero**: parallax scroll effect on content (useScroll + useTransform)
 - ✅ **Hero**: floating badge (GSAP yoyo animation)
@@ -89,13 +92,14 @@ npm run build
 - ✅ **All sections**: scroll-triggered fade-up (Framer Motion whileInView)
 
 ### Responsive
+
 - ✅ Mobile: single-column, Swiper carousels, collapsed nav
 - ✅ Tablet: 2-column grids, expanded spacing
 - ✅ Desktop: full 3-4 column layouts, side-by-side hero
 
 ## Key Design Decisions
 
-1. **Gold accent `#c8a96e`** — matches BrandsFace's luxury packaging positioning. Used for labels, CTAs, gradients, and icon backgrounds.
+1. **Gold accent `#c8a96e`** — matches PatchNova's luxury packaging positioning. Used for labels, CTAs, gradients, and icon backgrounds.
 
 2. **Playfair Display** — serif display type gives the brand premium positioning. Used with italic + gradient for hero emphasis.
 
